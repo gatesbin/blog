@@ -1,0 +1,1 @@
+var fs=require("fs");module.exports={listFiles:function(r){var s=[];return r=/\/$/.test(r)?r:r+"/",function r(t,e){for(var i=fs.readdirSync(t),n=0;n<i.length;n++){fs.statSync(t+i[n]).isDirectory()?r(t+i[n]+"/"):s.push(t+i[n])}}(r),s}};

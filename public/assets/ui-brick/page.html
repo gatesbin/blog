@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI Brick Preview</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_359250_q9g4vrv0i1.css">
+    <link rel="stylesheet/less" type="text/css" href="./base/style.less"/>
+    <style type="text/css">
+        #page-container {
+        }
+
+        .block-breaker {
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .block-selector {
+            display: block;
+            background: #FFF;
+            margin: 10px;
+            line-height: 50px;
+            color: #333;
+            text-align: center;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div id="page-container">
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/less.min.js"></script>
+<script src="js/holder.min.js"></script>
+<script>
+    $(function () {
+        var page = window.location.search.substring(5);
+        $.get("bricks/" + page + ".html", {}, function (html) {
+            $('#page-container').html(html)
+        });
+        $('body').on('DOMSubtreeModified', function () {
+            console.log('Detect Less');
+
+            less.registerStylesheets();
+            less.refresh(true);
+
+            $('[data-src]').each(function (i, o) {
+                if (!$(o).data('holder-process')) {
+                    $(o).data('holder-process', true);
+                    console.log('Process image holder ', $(o).attr('data-src'));
+                    setTimeout(function () {
+                        Holder.run({
+                            mode: 'background',
+                            theme: 'gray',
+                            domain: "placeholder",
+                            images: o,
+                            size: 12,
+                            font: "Monaco",
+                            fontweight: "normal",
+                            outline: 'yes',
+                            bgnodes: [o]
+                        });
+                    }, 1000);
+                }
+            });
+
+        });
+        setTimeout(function () {
+            less.watch();
+        }, 5000);
+        window.DelayExecute = function (delay, cb) {
+            setTimeout(function () {
+                cb()
+            }, delay);
+        }
+    });
+</script>
+</body>
+</html>

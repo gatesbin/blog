@@ -1,0 +1,58 @@
+<link rel="stylesheet/less" type="text/css" href="./bricks/component/menu/menu.less" />
+
+<div style="width:200px;padding:10px;">
+    <div class="ub-menu page-menu">
+        <div class="title">标题1</div>
+        <div class="items">
+            <a class="active" href="#">标题1-1</a>
+            <a href="#">标题1-2</a>
+        </div>
+        <div class="title">标题2</div>
+        <div class="items">
+            <a href="#">标题2-1</a>
+            <a href="#">标题2-2</a>
+        </div>
+        <div class="title">标题3</div>
+        <div class="items">
+            <a href="#">标题3-1</a>
+            <a href="#">标题3-2</a>
+        </div>
+    </div>
+</div>
+
+手机端
+
+<div class="ub-menu page-menu">
+    <div class="title">标题1</div>
+    <div class="items">
+        <a class="active" href="#">标题1-1</a>
+        <a href="#">标题1-2</a>
+    </div>
+    <div class="title">标题2</div>
+    <div class="items">
+        <a href="#">标题2-1</a>
+        <a href="#">标题2-2</a>
+    </div>
+    <div class="title">标题3</div>
+    <div class="items">
+        <a href="#">标题3-1</a>
+        <a href="#">标题3-2</a>
+    </div>
+    <div class="page-menu-toggle" onclick="$('body').toggleClass('ub-menu-page-show')">
+        <i class="iconfont icon-list"></i>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var $menu = $('.ub-menu');
+        $menu.find('.items .active').parent().show();
+        $menu.find('.title').on('click',function () {
+            var $next = $(this).next();
+            $next.is(':visible')?$next.slideUp():$next.slideDown();
+        });
+    });
+</script>
+
+
+

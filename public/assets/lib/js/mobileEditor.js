@@ -1,0 +1,1 @@
+var $=require("jquery"),MZEditor=require("./../../mz-editor/src/js/mz-editor.js"),MZEditorSimple=require("./../../mz-editor/src/js/mz-editor-simple.js"),MZCSS=require("./../../mz-editor/src/css/mz-editor.less"),MobileEditor={rich:function(r,e){return new MZEditor(r,e)},simple:function(r,e){return new MZEditorSimple(r,e)}};module.exports=MobileEditor;

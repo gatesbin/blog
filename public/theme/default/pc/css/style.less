@@ -1,0 +1,580 @@
+@mainColor: #3d444c;
+@primaryColor: #00BC9B;
+@linkColor: #07d;
+
+@maxWidth: 1000px;
+@minWidth: 900px;
+
+@import "./../../../../../resources/assets/lib/css/widget";
+@import "./../../../../../resources/assets/lib/css/pager";
+@import "./../../../../../resources/assets/lib/css/html";
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #999;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999;
+}
+
+.page-container {
+  .pages {
+    a:hover {
+      color: @mainColor;
+      border-color: @mainColor;
+    }
+  }
+}
+
+html {
+  font-size: 12px;
+}
+
+.page-container {
+  .pages {
+    text-align: center;
+    padding: 1em 0;
+    a, span, input, button {
+      display: inline-block;
+      line-height: 2rem;
+      padding: 0 1rem;
+      color: #666;
+      border: 1px solid #CCC;
+      margin: 0 5px;
+      vertical-align: bottom;
+      border-radius: 2px;
+      text-decoration: none;
+      background: #FFF;
+      box-shadow: 0 0 2px #CCC;
+    }
+    span {
+      color: #666;
+      border-color: #FFF;
+    }
+  }
+}
+
+body, html {
+  background: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, "opensans", "Optima", "Microsoft Yahei", sans-serif;
+  font-weight: normal;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  a {
+    color: @linkColor;
+    &:hover {
+      color: lighten(@linkColor, 10%);
+      text-decoration: none;
+    }
+  }
+  * {
+    text-shadow: none !important;
+  }
+}
+
+.uk-form {
+  .line {
+    padding: 10px 0 10px 100px;
+    .label {
+      display: block;
+      float: left;
+      text-align: right;
+      line-height: 30px;
+      padding: 0 5px 0 0;
+      margin: 0 0 0 -100px;
+      width: 90px !important;
+      span {
+        color: red;
+        display: inline-block;
+        line-height: 30px;
+        font-size: 1rem;
+      }
+    }
+    .field {
+      line-height: 30px;
+      margin-left: 0;
+      .help {
+        color: lighten(#333, 30%);
+        line-height: 18px;
+        padding: 5px 0;
+      }
+      textarea {
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+
+.uk-button-primary {
+  background: @primaryColor;
+  &:hover, &:focus {
+    background: darken(@primaryColor, 5%);
+  }
+}
+
+.main-container {
+  max-width: @maxWidth;
+  min-width: @minWidth;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.page-block {
+  background: #FFF;
+  margin: 15px 0;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 0px 3px #CCC;
+  -webkit-box-shadow: 0px 0px 3px #CCC;
+  box-shadow: 0px 0px 3px #CCC;
+  & > .head {
+    padding: 10px;
+    color: #333;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #EEE;
+    h2 {
+      border-left: 3px solid @primaryColor;
+      line-height: 1.5rem;
+      padding: 0 0 0 6px;
+      font-size: 1.5rem;
+    }
+  }
+  & > .body {
+    padding: 10px;
+    color: #666;
+  }
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0px;
+  width: 35%;
+  background: no-repeat center;
+  background-size: cover;
+  .container {
+    padding: 50px;
+    .avatar {
+      text-align: center;
+      img {
+        width: 70px;
+        height: 70px;
+        border: 2px solid #CCC;
+        border-radius: 50%;
+      }
+    }
+    h1 {
+      text-align: center;
+      padding: 20px 0 0 0;
+      margin: 0;
+      a {
+        color: #FFF;
+        font-size: 2rem;
+        line-height: 2rem;
+        display: block;
+      }
+    }
+    h2 {
+      color: #FFF;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 10px 0 0 0;
+      margin: 0;
+      line-height: 1.5rem;
+    }
+    .menu {
+      text-align: center;
+      padding: 30px 0 0 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0 5px;
+        a {
+          display: inline-block;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          color: #EEE;
+          border: 1px solid #EEE;
+          text-align: center;
+          font-size: 1rem;
+          line-height: 2rem;
+        }
+      }
+    }
+    .introduction {
+      color: #CCC;
+      padding: 20px 0 0 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #999;
+    text-align: center;
+    width: 35%;
+    font-size: 1rem;
+    line-height: 2rem;
+    a {
+      color: #999;
+    }
+  }
+}
+
+#body {
+  padding: 0 0 0 35%;
+  .container {
+    padding: 20px;
+    .blog-list {
+      .empty {
+        text-align: center;
+        line-height: 200px;
+        color: #999;
+        font-size: 1.5rem;
+      }
+      .blog-list-block {
+        padding: 20px;
+        box-sizing: border-box;
+        width: 33%;
+        .item {
+          display: block;
+          box-sizing: border-box;
+          background: #FFF;
+          padding: 20px;
+          margin: 0;
+          &:hover {
+            box-shadow: 0 0 8px #CCC;
+          }
+          h2 {
+            font-size: 1.5rem;
+            color: @primaryColor;
+            padding: 0;
+            margin: 0;
+            line-height: 2rem;
+          }
+          .cover {
+            margin: 20px 0 0 0;
+            &.cover-only {
+              margin: -20px;
+            }
+            img {
+              width: 100%;
+              min-height: 50px;
+            }
+          }
+          .summary {
+            margin: 20px 0 0 0;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: #999;
+          }
+        }
+      }
+    }
+    .page {
+      text-align: center;
+      a {
+        display: inline-block;
+        line-height: 1.5rem;
+        padding: 1rem;
+        color: #999;
+        box-shadow: 0 0 2px #CCC;
+        background: #FFF;
+        border-radius: 2px;
+        border: none;
+        margin: 0 5px;
+      }
+    }
+    .comment {
+      padding: 20px;
+      margin: 20px;
+      .head {
+        padding: 0 0 0 7rem;
+        overflow: hidden;
+        .avatar {
+          float: left;
+          margin: 0 0 0 -7rem;
+          img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            border: 1px solid #EEE;
+          }
+        }
+        .input {
+          padding: 1rem 0 0 0;
+          input {
+            border: none;
+            border-bottom: 1px solid #EEE;
+            height: 4rem;
+            line-height: 4rem;
+            display: block;
+            width: 100%;
+            outline: none;
+            font-size: 2rem;
+            color: #333;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .body {
+        padding: 20px 0 0 0;
+        textarea {
+          display: block;
+          width: 100%;
+          height: 8rem;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          border: 1px solid #EEE;
+          color: #333;
+          outline: none;
+          padding: 10px;
+          box-sizing: border-box;
+          resize: vertical;
+          border-radius: 3px;
+        }
+      }
+      .contact {
+        padding: 20px 0 0 0;
+        input {
+          border: 1px solid #EEE;
+          height: 4rem;
+          line-height: 4rem;
+          display: block;
+          width: 100%;
+          outline: none;
+          font-size: 1.5rem;
+          color: #333;
+          padding: 10px;
+          box-sizing: border-box;
+          border-radius: 3px;
+        }
+        button {
+          border: 1px solid #EEE;
+          border-radius: 3px;
+          display: block;
+          text-align: center;
+          height: 4rem;
+          line-height: 4rem;
+          background: #FFF;
+          font-size: 1.5rem;
+          width: 100%;
+          box-sizing: border-box;
+          cursor: pointer;
+          &:hover {
+            background: #EEE;
+          }
+        }
+      }
+      .desc {
+        padding: 20px 0 0;
+        color: #999;
+      }
+    }
+    .comment-list {
+      .item {
+        padding: 20px;
+        margin: 20px;
+        .head {
+          padding: 0 0 0 7rem;
+          border: none;
+          .avatar {
+            float: left;
+            margin: 0 0 0 -7rem;
+            img {
+              width: 6rem;
+              height: 6rem;
+              border-radius: 50%;
+              border: 1px solid #EEE;
+            }
+          }
+          h3 {
+            border: none;
+            height: 3rem;
+            line-height: 3rem;
+            display: block;
+            width: 100%;
+            outline: none;
+            font-size: 2rem;
+            color: #666;
+            box-sizing: border-box;
+            a {
+              color: #666;
+            }
+          }
+          h4 {
+            color: #999;
+            line-height: 2rem;
+          }
+        }
+        .content {
+          padding: 20px 0 0 0;
+          font-size: 1.3rem;
+          line-height: 1.5rem;
+          color: #666;
+          p {
+            padding: 0;
+            margin: 0;
+          }
+        }
+        .reply {
+          margin: 20px 0 0 0;
+          border-left: 2px solid #CCC;
+          padding: 10px 10px 10px 20px;
+          background: #EEE;
+          p {
+            margin: 0;
+          }
+        }
+        .action {
+          margin: 20px 0 0 0;
+          padding: 20px 0 0 0;
+          overflow: hidden;
+          border-top: 1px solid #EEE;
+          a {
+            display: block;
+            width: 50%;
+            float: left;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            color: #999;
+            text-align: center;
+            &.active {
+              color: @primaryColor;
+            }
+            &:hover {
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+    .blog {
+      padding: 20px;
+      .head {
+        h1 {
+          a {
+            display: inline-block;
+            line-height: 2rem;
+            padding: 0 1rem;
+            color: #666;
+            border: 1px solid #CCC;
+            margin: 0 5px;
+            vertical-align: bottom;
+            border-radius: 2px;
+            text-decoration: none;
+            background: #FFF;
+            box-shadow: 0 0 2px #CCC;
+          }
+          font-size: 3rem;
+        }
+        .attr {
+          color: #999;
+        }
+      }
+      .body {
+        .summary {
+          margin: 40px 0 0 0;
+          border-left: 2px solid #CCC;
+          padding: 10px 10px 10px 20px;
+          background: #EEE;
+          p {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            color: #666;
+          }
+        }
+        .images {
+          margin: 40px 0 0 0;
+          .image {
+            margin: 10px 0;
+            text-align: center;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+        .content {
+          margin: 40px 0 0 0;
+          p {
+            padding: 0;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            color: #666;
+          }
+        }
+        .share {
+          padding: 20px 0;
+          text-align: center;
+        }
+      }
+      .nav {
+        a {
+          display: block;
+          color: #999;
+          font-size: 1.4rem;
+          line-height: 3rem;
+          &:hover {
+            color: @mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    .copyright {
+      display: none;
+    }
+  }
+
+  #body {
+    padding: 0;
+    .container {
+      padding: 0;
+      .blog-list {
+        .blog-list-block {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
