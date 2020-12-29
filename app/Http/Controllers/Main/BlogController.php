@@ -48,7 +48,7 @@ class BlogController extends BaseController
     {
         $blog = ModelUtil::get('blog', ['id' => $id]);
         if (empty($blog)) {
-            return Response::send(-1, '博客不存在');
+            return Response::send(-1, '博客丢了!');
         }
 
         $data = [];
@@ -66,7 +66,7 @@ class BlogController extends BaseController
         }
 
         if (empty($data['content'])) {
-            return Response::send(-1, '留言内容为空');
+            return Response::send(-1, '留言内容为空!');
         }
         ModelUtil::insert('blog_comment', $data);
         return Response::send(0, null, null, '[reload]');
